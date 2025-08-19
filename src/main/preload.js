@@ -1,6 +1,13 @@
 // See the Electron documentation for details on how to use preload scripts:
 // https://www.electronjs.org/docs/latest/tutorial/process-model#preload-scripts
 
+console.log('Simple preload script is running');
+
+window.addEventListener('DOMContentLoaded', () => {
+  console.log('DOM is ready!');
+});
+
+/*
 // src/main/preload.js
 const { contextBridge, ipcRenderer } = require('electron');
 
@@ -14,5 +21,4 @@ contextBridge.exposeInMainWorld('electronAPI', {
   // Example function: receive a message from the main process
   onReply: (callback) => ipcRenderer.on('reply-channel', (_event, value) => callback(value)),
 });
-
-console.log('Preload script loaded successfully')
+*/
